@@ -1,35 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <title>Monitoramento de Temperatura</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor DHT22</title>
     <link rel="stylesheet" href="css/pg.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,100..900;1,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,100..900;1,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
     </style>
+
 </head>
 
 <body>
-    <div class="blocoLogin" id="telaLogin">
-        <h2>Login</h2>
-        <input type="email" id="campoEmail" placeholder="E-mail">
-        <input type="password" id="campoSenha" placeholder="Senha">
-        <button onclick="login()">Entrar</button>
-        <p id="erroLogin" style="color:red; display:none;">Credenciais inválidas!</p>
+    <div>
+        <img src="images/temperaturas.png" class="logo">
+    </div>
+    <h1>Monitor DHT22</h1>
+    <p>Monitoramento em tempo real de temperatura e umidade do ambiente</p>
+
+    <div class="status">
+        <div class="dot"></div>
+        <span>Online</span>
     </div>
 
-    <div class="container oculto" id="painelMonitoramento">
-        <h2>Monitoramento</h2>
-        <div class="caixaInfo">🌡️ Temperatura: <span id="valorTemp">--</span> °C</div>
-        <div class="caixaInfo">💧 Umidade: <span id="valorUmid">--</span> %</div>
-        <div class="caixaInfo">🔥 Sensação Térmica: <span id="valorSensacao">--</span> °C</div>
-        <button onclick="logout()">Sair</button>
+    <div class="cards">
+        <div class="card temp">
+            Temperatura
+            <span id="valorTemp">--</span>°C
+        </div>
+        <div class="card umid">
+            Umidade
+            <span id="valorUmid">--</span>%
+        </div>
+        <div class="card sensacao">
+            Sensação Térmica
+            <span id="valorSensacao">--</span>°C
+        </div>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="js/pg.js"></script>
 </body>
 

@@ -9,29 +9,7 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
 const db = firebase.database();
-
-async function login() {
-  const email = document.getElementById("campoEmail").value;
-  const senha = document.getElementById("campoSenha").value;
-
-  try {
-    await auth.signInWithEmailAndPassword(email, senha);
-    document.getElementById("telaLogin").classList.add("oculto");
-    document.getElementById("painelMonitoramento").classList.remove("oculto");
-    monitorarSensores();
-  } catch (err) {
-    console.error(err);
-    document.getElementById("erroLogin").style.display = "block";
-  }
-}
-
-async function logout() {
-  await auth.signOut();
-  document.getElementById("painelMonitoramento").classList.add("oculto");
-  document.getElementById("telaLogin").classList.remove("oculto");
-}
 
 function calcularSensacao(temp, umid) {
   return (
@@ -72,3 +50,5 @@ function atualizarSensacao() {
     document.getElementById("valorSensacao").textContent = calcularSensacao(temp, umid);
   }
 }
+
+monitorarSensores();
