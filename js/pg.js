@@ -20,7 +20,7 @@ async function login() {
     await auth.signInWithEmailAndPassword(email, senha);
     document.getElementById("telaLogin").classList.add("oculto");
     document.getElementById("painelMonitoramento").classList.remove("oculto");
-    monitorarSensores(); // inicia o monitoramento em tempo real
+    monitorarSensores();
   } catch (err) {
     console.error(err);
     document.getElementById("erroLogin").style.display = "block";
