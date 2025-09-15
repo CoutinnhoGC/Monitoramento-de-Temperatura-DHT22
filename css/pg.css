@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #0f0a00, #010058);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+.blocoLogin,
+#painelMonitoramento {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.oculto {
+    display: none;
+}
+
+h2 {
+    font-family: "Libre Baskerville", serif;
+    margin-bottom: 10px;
+    color: #024e8b;
+    font-weight: bold;
+    font-size: 30px;
+
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #024e8b;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background: #f7b733;
+    transform: scale(1.03);
+}
+
+.caixaInfo {
+    margin: 12px 0;
+    padding: 14px;
+    border-radius: 10px;
+    background: #f4f4f4;
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+}
+
+.caixaInfo.atualizado {
+    background: #e0f7fa;
+    transition: background 0.5s;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Monitoramento de Temperatura</title>
+    <link rel="stylesheet" href="css/pg.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,100..900;1,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+    </style>
+</head>
+
+<body>
+    <div class="blocoLogin" id="telaLogin">
+        <h2>Login</h2>
+        <input type="email" id="campoEmail" placeholder="E-mail">
+        <input type="password" id="campoSenha" placeholder="Senha">
+        <button onclick="login()">Entrar</button>
+        <p id="erroLogin" style="color:red; display:none;">Credenciais inválidas!</p>
+    </div>
+
+    <div class="container oculto" id="painelMonitoramento">
+        <h2>Monitoramento</h2>
+        <div class="caixaInfo">🌡️ Temperatura: <span id="valorTemp">--</span> °C</div>
+        <div class="caixaInfo">💧 Umidade: <span id="valorUmid">--</span> %</div>
+        <div class="caixaInfo">🔥 Sensação Térmica: <span id="valorSensacao">--</span> °C</div>
+        <button onclick="logout()">Sair</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <script src="js/pg.js"></script>
+</body>
+
+</html>
